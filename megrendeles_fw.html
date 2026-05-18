@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megrendelés - Hatósági ellenőrzések a felnőttképzésben</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --link-blue: #0645ad;
+    --wiki-border: #a2a9b1;
+    --bg-gray: #f8f9fa;
+    --mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    --font-display: "Helvetica Neue", sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: #202122;
+    background: #ffffff;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* Full-width elrendezés a landing page mintájára */
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1, h2, h3, header div[style*="font-weight: bold"] {
+    font-family: var(--font-display) !important;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+h1 { 
+    font-size: clamp(1.8rem, 5vw, 2.5rem); 
+    border-bottom: 1px solid var(--wiki-border);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h2 { 
+    font-size: 1.1rem; 
+    border-bottom: 1px solid var(--wiki-border);
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Kétoszlopos elrendezés a széles formhoz */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--wiki-border);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    outline: 1px solid var(--link-blue);
+    border-color: var(--link-blue);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input {
+    margin-top: 4px;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.wiki-table th, .wiki-table td {
+    border: 1px solid var(--wiki-border);
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.wiki-table th {
+    background: var(--bg-gray);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.wiki-table td {
+    font-size: 0.95rem;
+}
+
+.submit-btn {
+    background: var(--bg-gray);
+    color: #202122;
+    border: 1px solid var(--wiki-border);
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: background 0.1s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: #eee;
+}
+
+.infobox {
+    background: var(--bg-gray);
+    border: 1px solid var(--wiki-border);
+    padding: 15px;
+    font-size: 0.9rem;
+    margin: 20px 0;
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div style="font-size: 0.8rem; color: var(--link-blue); font-weight: bold; margin-bottom: 5px;">
+            Hatósági ellenőrzések a felnőttképzésben | 2026 &rarr; Megrendelés
+        </div>
+        <h1>Megrendelési adatlap</h1>
+    </header>
+
+    <form action="#" method="POST">
+        
+        <h2>01 | Rendelt tétel és fizetési feltételek</h2>
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th>Megnevezés</th>
+                    <th>Fizetési mód</th>
+                    <th>Összeg</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FKTV – Felnőttképzési szakértői ismeretek hatósági ellenőrzésekre (Online kurzus és segédanyagok)</td>
+                    <td>Banki átutalás (díjbekérő alapján)</td>
+                    <td style="font-family: var(--mono); font-weight: bold;">997 EUR</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="infobox">
+            <strong>Fizetési információ:</strong> A megrendelés elküldése után a megadott e-mail címre egy díjbekérőt küldünk a fizetési adatokkal és a banki számlaszámmal. A hozzáférés a teljes összeg beérkezését követően kerül aktiválásra.
+        </div>
+
+        <div class="form-grid-2">
+            <div>
+                <h2>02 | Kapcsolattartó adatai</h2>
+                <div class="form-group">
+                    <label for="name">Teljes név *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="email">E-mail cím *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefonszám *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>03 | Számlázási adatok</h2>
+                <div class="form-group">
+                    <label for="billing_name">Számlázási név (Cég vagy Magánszemély) *</label>
+                    <input type="text" id="billing_name" name="billing_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="tax_number">Adószám (Cégek esetén kötelező)</label>
+                    <input type="text" id="tax_number" name="tax_number">
+                </div>
+                <div class="form-group">
+                    <label for="address">Cím (Utca, házszám) *</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label for="zip">Irányítószám *</label>
+                        <input type="text" id="zip" name="zip" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Város *</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Ország *</label>
+                        <select id="country" name="country">
+                            <option value="HU">Magyarország</option>
+                            <option value="RO">Románia</option>
+                            <option value="SK">Szlovákia</option>
+                            <option value="OTHER">Egyéb</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>04 | Feltételek jóváhagyása</h2>
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">Megértettem és elfogadom az Általános Szerződési Feltételeket (ÁSZF) és az Adatkezelési tájékoztatót. Tudomásul veszem, hogy a megrendelés elküldése fizetési kötelezettséggel járó jognyilatkozatnak minősül. *</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Megrendelés elküldése</button>
+    </form>
+
+    <footer style="border-top: 1px solid var(--wiki-border); padding: 15px 0 20px 0; margin-top: 60px; font-size: 0.8rem; color: #54595d;">
+        <a href="#" style="color: var(--link-blue);">Adatkezelési tájékoztató</a> &nbsp;·&nbsp;
+        <a href="#" style="color: var(--link-blue);">ÁSZF</a> &nbsp;·&nbsp;
+        <a href="#" style="color: var(--link-blue);">Impresszum</a> &nbsp;·&nbsp;
+        <a href="#" style="color: var(--link-blue);">Jogi és AI nyilatkozat</a>
+    </footer>
+</div>
+
+</body>
+</html>

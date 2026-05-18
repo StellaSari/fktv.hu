@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 tipikus képzői hiba hatósági ellenőrzésen a felnőttképzésben</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+        /* Premium Accent Color: Midnight Navy */
+        --accent-navy: #1a2a3a;
+        --wiki-border: #a2a9b1;
+        --bg-gray: #f8f9fa;
+        --mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+        --font-display: "Helvetica Neue", Helvetica, sans-serif;
+        --font-body: 'Roboto', sans-serif;
+    }
+
+    body {
+        font-family: var(--font-body);
+        font-size: 14px;
+        line-height: 1.6;
+        color: #202122;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+    }
+
+    #wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px 16px;
+    }
+
+    
+
+        /* TOP BAR */
+    #topbar {
+        border-bottom: 1px solid var(--wiki-border);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        font-family: var(--font-display);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #54595d;
+        display: flex;
+        justify-content: space-between;
+    }
+    #topbar a { color: var(--accent-navy); text-decoration: none; font-weight: 500; }
+    #topbar a:hover { text-decoration: underline; }
+        /* PAGE TITLE */
+   h1 {
+        font-family: var(--font-display);
+        font-size: 32px;
+        font-weight: 300; /* Light weight for authority */
+        border-bottom: 2px solid var(--accent-navy);
+        margin: 0 0 8px 0;
+        padding-bottom: 8px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: -0.02rem;
+    }
+
+    .page-subtitle {
+        font-size: 13px;
+        color: #54595d;
+        margin-bottom: 24px;
+        font-family: var(--font-body);
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+        /* LAYOUT: sidebar TOC + main content */
+      #content {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 32px;
+        align-items: start;
+    }
+
+        /* TOC */
+       #toc {
+        border: 1px solid var(--wiki-border);
+        background: var(--bg-gray);
+        padding: 15px;
+        font-family: var(--font-body);
+        font-size: 12px;
+        position: sticky;
+        top: 12px;
+    }
+
+        #toc-title {
+        font-family: var(--font-display);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--wiki-border);
+    }
+
+        #toc ol {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        #toc li {
+            margin: 5px 0;
+        }
+
+     #toc a { color: var(--accent-navy); text-decoration: none; }
+        #toc a:hover { text-decoration: underline; }
+
+        #toc .toc-sub {
+            padding-left: 14px;
+            margin-top: 3px;
+        }
+        #toc .toc-sub li { margin: 3px 0; }
+
+        /* MAIN */
+       #main h2 {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 300;
+        color: var(--accent-navy);
+        border-bottom: 1px solid var(--wiki-border);
+        margin: 40px 0 16px 0;
+        padding-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+        #main h3 {
+        font-family: var(--font-display);
+        font-size: 15px;
+        font-weight: 500;
+        margin: 24px 0 8px 0;
+        color: #333;
+    }
+
+        #main h4 {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 12px 0 4px 0;
+            color: #54595d;
+        }
+
+        #main p {
+            margin: 0 0 10px 0;
+        }
+
+        /* INFOBOX */
+        .infobox {
+        float: right;
+        border: 1px solid var(--accent-navy);
+        background: #fff;
+        margin: 0 0 20px 20px;
+        padding: 0;
+        width: 280px;
+        font-size: 12px;
+    }
+
+        .infobox-title {
+        background: var(--accent-navy);
+        color: #fff;
+        text-align: center;
+        font-family: var(--font-display);
+        font-weight: 300;
+        text-transform: uppercase;
+        padding: 8px;
+        margin: 0;
+    }
+
+        .infobox table { width: 100%; border-collapse: collapse; }
+        .infobox td { padding: 3px 4px; vertical-align: top; border-top: 1px solid #e2e2e2; }
+        .infobox td:first-child { font-weight: 700; color: var(--accent-navy); }
+
+        /* WARNING BOX */
+       .ambox {
+        border: 1px solid var(--wiki-border);
+        background: var(--bg-gray);
+        font-size: 13px;
+    }
+    .ambox.note { border-left: 5px solid var(--accent-navy); }
+    .ambox.danger { border-left: 5px solid #b32424; }
+        .ambox.warn { border-left: 4px solid #f0a500; }
+        .ambox.note { border-left: 4px solid #3366cc; }
+        .ambox.danger { border-left: 4px solid #b32424; }
+
+        .ambox-icon { font-size: 22px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+        .ambox-text { line-height: 1.5; color: #202122; }
+        .ambox-text b { font-weight: bold; }
+
+        /* QUOTE */
+        blockquote {
+            border-left: 3px solid #a2a9b1;
+            margin: 12px 0 12px 20px;
+            padding: 4px 0 4px 14px;
+            color: #54595d;
+            font-style: italic;
+        }
+
+        /* TABLE */
+        table.wikitable th {
+        background: var(--accent-navy);
+        color: #fff;
+        font-family: var(--font-display);
+        font-weight: 300;
+        text-transform: uppercase;
+        border: 1px solid var(--accent-navy);
+    }
+
+        table.wikitable th {
+            background: #eaecf0;
+            border: 1px solid #a2a9b1;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table.wikitable td {
+            border: 1px solid #a2a9b1;
+            padding: 5px 8px;
+            vertical-align: top;
+        }
+
+        table.wikitable tr:nth-child(even) td { background: #f8f9fa; }
+
+        .td-bad { color: #b32424; font-family: 'Courier New', monospace; font-size: 11px; }
+        .td-ok  { color: #2a6c2a; }
+
+        /* DIALOGUE */
+     .dialogue {
+        border: 1px solid var(--wiki-border);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .dialogue-header {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+        .dialogue-header.bad { background: #fee7e6; color: #b32424; }
+        .dialogue-header.good { background: #e6f4ea; color: #2a6c2a; }
+
+        .dialogue-body { padding: 10px; }
+
+        .d-line { margin-bottom: 8px; display: grid; grid-template-columns: 80px 1fr; gap: 8px; }
+        .d-speaker { font-weight: bold; font-size: 11px; color: #54595d; padding-top: 1px; }
+        .d-speaker.e { color: #3366cc; }
+        .d-speaker.k-ok { color: #2a6c2a; }
+        .d-speaker.k-bad { color: #b32424; }
+        .d-text { }
+        .d-trans { font-family: Arial, sans-serif; font-size: 11px; color: #b32424; font-style: italic; margin-top: 3px; padding-left: 8px; border-left: 2px solid #f0a500; }
+        .d-meta { font-family: Arial, sans-serif; font-size: 11px; color: #72777d; font-style: italic; margin-top: 3px; }
+
+        /* FORBIDDEN LIST */
+        .forbidden-list {
+            counter-reset: forbidden;
+            list-style: none;
+            padding: 0;
+            margin: 8px 0;
+        }
+
+        .forbidden-list li {
+            counter-increment: forbidden;
+            border-bottom: 1px solid #eaecf0;
+            padding: 8px 0 8px 0;
+            display: grid;
+            grid-template-columns: 24px 1fr 1fr;
+            gap: 10px;
+            font-size: 13px;
+            align-items: start;
+        }
+
+        .forbidden-list li::before {
+            content: counter(forbidden) ".";
+            color: #72777d;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding-top: 1px;
+        }
+
+        .forbidden-list li {
+        border-bottom: 1px solid #eee;
+    }
+    .f-quote {
+        font-family: var(--mono);
+        font-weight: 600;
+        color: #b32424;
+    }
+
+        .f-why {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            color: #54595d;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+       #footer {
+        border-top: 2px solid var(--accent-navy);
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+        #footer a { color: #3366cc; text-decoration: none; }
+
+        /* CLEARFIX */
+        .clearfix::after { content: ''; display: table; clear: both; }
+
+        @media (max-width: 700px) {
+            #content { grid-template-columns: 1fr; }
+            #toc { position: static; }
+            .infobox { float: none; width: auto; margin: 0 0 16px 0; }
+            .forbidden-list li { grid-template-columns: 24px 1fr; }
+            .f-why { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <!-- TOPBAR -->
+    <div id="topbar">
+        <div>
+            <a href="index.html">Főoldal</a> &nbsp;›&nbsp;
+            <a href="#">Felnőttképzés</a> &nbsp;›&nbsp;
+            <a href="#">Hatósági ellenőrzések</a> &nbsp;›&nbsp;
+            3 hiba
+        </div>
+        <div><a href="megrendeles.html">Megrendelés →</a></div>
+    </div>
+
+    <!-- PAGE TITLE -->
+    <h1>3 tipikus képzői hiba felnőttképzési ellenőrzésen</h1>
+    <div class="page-subtitle">Forrás: <br>Pásztor Eszter: volt képző intézmény ügyvezető és szakmai vezető, hatósági szakértő, FSZOE tréner, piacvezető felnőttképzési tanácsadó és <br>Werner Zsolt Csaba: volt képző intézmény ügyvezető és pénzügyi vezető, piacvezető felnőttképzési tanácsadó </div>
+
+    <div id="content">
+
+        <!-- TOC -->
+        <div id="toc">
+            <div id="toc-title">Tartalom</div>
+            <ol>
+                <li><a href="#bevezeto">Bevezető</a></li>
+                <li><a href="#kontextus">Háttér és kontextus</a>
+                    <ol class="toc-sub">
+                        <li><a href="#ketfele">Két képzőtípus</a></li>
+                    </ol>
+                </li>
+                <li><a href="#hiba1">1. hiba: Túl sok beszéd</a>
+                    <ol class="toc-sub">
+                        <li><a href="#helyes-parbeszed">Helyes párbeszéd</a></li>
+                        <li><a href="#hibas-parbeszed">Hibás párbeszéd</a></li>
+                    </ol>
+                </li>
+                <li><a href="#hiba2">2. hiba: Barátként kezelés</a>
+                    <ol class="toc-sub">
+                        <li><a href="#tiltott">Tiltott mondatok (1–14)</a></li>
+                        <li><a href="#helyes-mondatok">Helyes válaszok</a></li>
+                    </ol>
+                </li>
+                <li><a href="#hiba3">3. hiba: Játékszabályok</a></li>
+                <li><a href="#osszefoglalas">Összefoglalás</a></li>
+                <li><a href="#figyelmezetes">Figyelmeztetés</a></li>
+            </ol>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div id="main">
+
+            <!-- INFOBOX -->
+            <div class="infobox">
+                <div class="infobox-title">Gyors referencia</div>
+                <table>
+                    <tr><td>Téma</td><td>Felnőttképzési hatósági ellenőrzés</td></tr>
+                    <tr><td>Hibák száma</td><td>3 főhiba, 14 tiltott mondat</td></tr>
+                    <tr><td>Forrás</td><td>200+ felnőttképzési helyszíni szemle (ellenőrzési) tapasztalat</td></tr>
+                    <tr><td>Jogalap</td><td>Fktv., (2013. évi LXXVII. törvény
+                    a felnőttképzésről) és a végrehajtási rendeletek</td></tr>
+                    <tr><td>Min. és max. bírság</td><td>322,800 Ft és 16 140 000 Ft (50× minimálbér), 2026.</td></tr>
+                    <tr><td>Szerzők:</td><td>Pásztor Eszter<br>Werner Zsolt Csaba</td></tr>
+                    <tr><td>Frissítve</td><td>2026. április</td></tr>
+                </table>
+            </div>
+
+            <div class="ambox note">
+                <div class="ambox-icon">ℹ</div>
+                <div class="ambox-text"><b>Ez a dokumentum nem jogi tanács.</b> Nem képviselet, nem hatósági állásfoglalás. Gyakorlati tapasztalatokon alapuló útmutató, a dokumentáció, a reakciók és a viselkedés szintjén.</div>
+            </div>
+
+            <!-- BEVEZETŐ -->
+            <h2 id="bevezeto">Bevezető</h2>
+
+            <p>A felnőttképzési ellenőrzés nem attól stresszes a képzőknek, hogy felnőttképzési szakértőként hibát találunk, hanem attól, hogy általában ott, ahol a képzőnél senki nem kereste a hibákat a felkészülés során.</p>
+
+            <blockquote>„Aki rendben van, annak nincs félnivalója. Ezt szakértőként is sokszor hallhatjuk. Tapasztalt szakértőként és tanácsadóként a véleményem: ez nagyjából addig igaz, amíg nincs ellenőrzés."</blockquote>
+
+            <p>A felnőttképzési ellenőrzés nem arról szól, hogy valaki általánosságban „rendben van-e", hanem arról, hogy <b>mit lehet leírni a jogszabály és a jegyzőkönyv hivatalos nyelvén.</b> Ez a folyamat nem a „józan paraszti észről" szól, hanem egy szigorú szabályrendszeren alapuló eljárás és felnőttképzési szakértőként különösen érdemes ezt szem előtt tartanunk.</p>
+
+            <p>Egy ideig a Római-part közelében éltem. Sokat láttam az evezősöket edzeni. Az edzők motorcsónakban ültek, megafonnal a kezükben. Elsőre furcsának tűnt. Aztán leesett a tízfilléres: egy edzőnek egyetlen dologhoz kell értenie: hogyan hozza ki a maximumot a sportolóból.  </p>
+
+            <!-- KONTEXTUS -->
+            <h2 id="kontextus">Háttér és kontextus</h2>
+
+            <p>A felnőttképzési eljárás nem az oktatásról szól, hanem <b>a jogszabályoknak való megfelelésről és a rendszerekről. Ezt nem csak képzők szokták eltéveszteni, olykor felnőttképzési szakértők is abban a tévhitben vannak, hogy szakmailag kell majd roston sütni a képzőket egy ellenőrzésen.</b> Ez egyébként sok képzőnek is csalódás, mert azt gondolják, majd a képzések színvonalával "bevágódnak" a szakértőknél. Nem lehet azt mondani, hogy ez lehetetlen, de ritkább, mint a kívülállók gondolnák. Hiába szimpatikus a képző, és jó a képzés és ezt látjuk, mert ez látszik, ha nem felel meg a felnőttképzési szerződés a jogszabályban előírtaknak, akkor nem felel meg, ezzel nem tudunk mit kezdeni, mint felnőttképzési szakértők. <br>
+            A felnőttképzési ellenőrzés a dokumentációk megfelelőségéről szól és arról, hogy meggyőződjünk, valóban lezajlott-e a képzés és úgy zajlott le, ahogyan az meg volt tervezve (a képzési program itt jön a képbe). Lehet, ez egyszerűnek hangzik, de 200 körüli helyszíni szemlével és több száz képzési projekttel azt mondhatom: egyáltalán nem olyan egyszerű olykor megállapítani, hogy egy képzés valóban meg lett-e tartva és úgy, ahogy az a képzési programban le van írva.</p>
+
+            <h3 id="ketfele">Két képzőtípus</h3>
+
+            <table class="wikitable">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Hagyományos képző</th>
+                        <th style="width:50%">Folyamatokban gondolkozó képző</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Azt gondolja, hogy az ellenőrzésen majd „átbeszéli" a működést, akkor is, ha az nem felel meg a jogszabályoknak.</td>
+                        <td>Megértette, hogy a jogszabályokon belül kell mozogni. Ott viszont szabad a pálya.</td>
+                    </tr>
+                    <tr>
+                        <td>Nem ők alkalmazkodnak a jogszabályokhoz: a jogszabályok alkalmazkodjanak hozzájuk.</td>
+                        <td>Megtalálja a módot, ahogy a kecske is jóllakik és a káposzta is megmarad.</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color:#b32424">Kockázat: tele van rizikófaktorral, bármikor váltás jöhet.</span></td>
+                        <td><span style="color:#2a6c2a">Eredmény: stabil, védhető működés.</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ambox warn">
+                <div class="ambox-icon">⚠</div>
+                <div class="ambox-text">Vannak egyenlők és vannak egyenlőbbek, de erre stratégiát alapozni merész dolog. <b>Öveket becsatolni!</b></div>
+            </div>
+
+            <!-- HIBA 1 -->
+            <h2 id="hiba1">1. hiba: Túl sok beszéd</h2>
+
+            <p>A „sok beszédnek sok az alja" közmondás egy felnőttképzési ellenőrzésen a <b>legfontosabb túlélési útmutató.</b> Felnőttképzési szakértőként azért vagyunk ott az ellenőrzésen, hogy megnézzük, megfelel-e a működés a jogszabályoknak.</p>
+
+            <p>Honnan tudjuk, ha egy képző felkészült? A helyes stratégia a rövid, tényszerű válaszok és a csend elviselésének képessége. A felkészült cégvezető a feltett kérdésre a dokumentáció megfelelő pontjára mutatva válaszol: <i>„Igen, a szerződés tartalmazza."</i> A felkészületlen magyarázkodni kezd. Ha egy képző nagyon elkezd magyarázkodni, és a mondandójának nincs se eleje, se vége, akkor tudhatjuk, hogy valami nem stimmel. Habár erre láttam már ellenpéldát, amikor a jól felkészült képző, jól felkészült szakmai vezető, jó infrastruktúra, jó reputáció és bejött az ügyvezető, hosszasan ecsetelt felesleges dolgokat, teljesen félreérthetően fogalmazott és majdnem "megbuktatta" a saját cégét. Szóval mindenre van példa és ellenpélda. </p>
+
+            <blockquote>A ritmus egyszerű: <b>Kérdés. Válasz. Csend.</b><br>A sok beszéd nem védekezés. Hanem alapanyag nekünk. A mi szempontunkból nézve, ha a képző sokat beszél, az nekünk jó. Ilyenkor általában tovább tart a jegyzőkönyv írása, mert sok lesz a nem-megfelelőség.</blockquote>
+
+            <h3 id="helyes-parbeszed">Helyes párbeszéd példák: dokumentáció átnézése közben</h3>
+
+            <div class="dialogue">
+                <div class="dialogue-header good">✓ Helyes példák (nem komplett párbeszéd, kiragadott mondatok): kontaktórás képzés ellenőrzése</div>
+                <div class="dialogue-body">
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">Rendben, akkor nézzünk egy lezárt képzést. Kérem az egységes dokumentumot.</span></div>
+                    <div class="d-line"><span class="d-speaker k-ok">Képző ✓:</span><span class="d-text">Itt van, időrendben lefűzve, elektronikusan is rendelkezésre áll. Elöl a csekklisták, utána a megvalósítás.</span></div>
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">Minden résztvevőnél külön van a jelentkezési lap?</span></div>
+                    <div class="d-line"><span class="d-speaker k-ok">Képző ✓:</span><span class="d-text">Igen. Minden résztvevő saját, aláírt példánnyal szerepel.</span></div>
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">Az adatkezelési nyilatkozatot mikor írták alá?</span></div>
+                    <div class="d-line"><span class="d-speaker k-ok">Képző ✓:</span><span class="d-text">A jelentkezéssel egy időben, a képzés megkezdése előtt.</span></div>
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">A megengedett hiányzás 10% a felnőttképzési szerződésben ez megegyezik a képzési programmal?</span></div>
+                    <div class="d-line"><span class="d-speaker k-ok">Képző ✓:</span><span class="d-text">Igen, pontosan ugyanaz az érték.</span></div>
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">Ha lett volna változás az ütemezésben, hogyan kezelték volna?</span></div>
+                    <div class="d-line"><span class="d-speaker k-ok">Képző ✓:</span><span class="d-text">Írásos tájékoztatással és dokumentált módosítással elektronikusan.</span></div>
+                </div>
+            </div>
+
+            <h3 id="hibas-parbeszed">Hibás párbeszéd: „túlbeszélő" képző</h3>
+
+            <div class="ambox danger">
+                <div class="ambox-icon">✗</div>
+                <div class="ambox-text"><b>Figyelmeztetés:</b> Az alábbi párbeszéd direkt tele van hibával, kizárólag oktatási céllal. </div>
+            </div>
+
+            <div class="dialogue">
+                <div class="dialogue-header bad">✗ Hibás példák: a „túlbeszélő" képző</div>
+                <div class="dialogue-body">
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">Kérem a lezárt képzés teljes dokumentációját.</span></div>
+                    <div class="d-line"><span class="d-speaker k-bad">Képző ✗:</span><span class="d-text">Persze, persze, máris! Tudja, mi nagyon szeretjük rendben tartani a papírokat, én mindig mondom a kollégáknak is, hogy inkább legyen benne több, mint kevesebb, haha. Amúgy nagyon örülünk az ellenőrzésnek!
+                        <div class="d-trans">Fordítás: Mi készültünk, nincs itt semmi látnivaló.</div>
+                    </span></div>
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">Látok itt üres mezőket.</span></div>
+                    <div class="d-line"><span class="d-speaker k-bad">Képző ✗:</span><span class="d-text">Igen, az csak a munkaerő-piaci státusz, azt nem mindig tudják értelmezni a résztvevők… meg őszintén szólva nem is olyan fontos, mi inkább a szakmai részre koncentrálunk.
+                        <div class="d-trans">Fordítás: Elismerem a hibákat, de próbálom elterelni a figyelmet.</div>
+                    </span></div>
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">Tehát nem mindenki a képzés megkezdése előtt írta alá a szerződést?</span></div>
+                    <div class="d-line"><span class="d-speaker k-bad">Képző ✗:</span><span class="d-text">Most ha szó szerint nézzük… de a lényeg, hogy senki nem maradt ki. Mi inkább az emberi kapcsolatokra fókuszálunk, nem a dátumokra.
+                        <div class="d-trans">Fordítás: Nincsenek valódi rendszereink.</div>
+                    </span></div>
+                    <div class="d-line"><span class="d-speaker e">Felnőttképzési szakértő:</span><span class="d-text">A panaszkezelés és a szerződésszegés hol szerepel?</span></div>
+                    <div class="d-line"><span class="d-speaker k-bad">Képző ✗:</span><span class="d-text">Panasz? Hát nálunk ilyen nem szokott lenni. Mi családias hangulatban dolgozunk…
+                        <div class="d-trans">Fordítás: Azt sem tudom, mi van a felnőttképzési szerződésben. → A felnőttképzési szakértő lassan becsukja a szerződéscsomagot.</div>
+                    </span></div>
+                </div>
+            </div>
+
+            <!-- HIBA 2 -->
+            <h2 id="hiba2">2. hiba: A felnőttképzési szakértőt barátként kezelni</h2>
+
+            <p>Az egyik legnehezebb része az ellenőrzéseknek a pszichológiai rész. Ha barátságosak vagyunk, azt nagyon könnyen félre lehet értelmezni. A barátságosság egyébként bizonyos felnőttképzési szakértőknél egy eszköz is lehet a képző védekezésének a lebontására. Ne feledjük, a felnőttképzési szakértő feladata a hibák felderítése, nem szövetségesek vagyunk és legfőképpen, egy ellenőrzésen, a hatóság kirendelésénél nem tanácsadók.</p>
+
+
+            <div class="ambox note">
+                <div class="ambox-icon">ℹ</div>
+                <div class="ambox-text">Valamiért a legtöbb emberből az ellenőrzés kihozza az akaratlan igazmondást, akkor is, amikor nem kellene. Vannak esetek, amikor <b>nem kötelességünk saját magunk alatt vágni fát:</b>akkor sem, ha éppen az az igazság.</div>
+            </div>
+
+            <h3 id="tiltott">Tiltott mondatok (1–14)</h3>
+
+            <ul class="forbidden-list">
+                <li>
+                    <span class="f-quote">„Nálunk ez mindig így szokott menni."</span>
+                    <span class="f-why">Ellenőri fordítás: „Nincs dokumentálva, de megszoktuk." Önként jelentkezik nem-megfelelőségért.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„A gyakorlatban ez kicsit máshogy működik."</span>
+                    <span class="f-why">„Nem tartjuk be a leírt szabályokat." A jogszabály nem szereti a gyakorlatot. Csak azt, ami le van írva.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Ez csak adminisztráció."</span>
+                    <span class="f-why">A felnőttképzésben minden adminisztráció. Ez a mondat lenézésként hat a rendszer felé.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Eddig ez nem volt problémás."</span>
+                    <span class="f-why">Fordítás: Mostanáig megúsztuk. Kimondatlan folytatás: „akkor most nézzük meg közelebbről."</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Szerintem ez nem akkora gond."</span>
+                    <span class="f-why">A „szerintem" szó felnőttképzési ellenőrzésen nem létezik. A jogszabály nem gondolkodik, nem érez.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Ez egy szürke zóna."</span>
+                    <span class="f-why">Technikailag lehet igaz. Stratégiailag végzetes — olyan, mintha rámutatnál egy falrepedésre.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Mi mindig igyekszünk mindent szabályosan csinálni."</span>
+                    <span class="f-why">Túl általános és gyanús. Ha mindent szabályosan csinálna, nem mondaná így.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Ez nem is volt benne az ellenőrzési értesítőben."</span>
+                    <span class="f-why">Támadásnak hangzik — azt üzeni: „megkérdőjelezed a hatáskörömet."</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Ez csak egy formai hiba."</span>
+                    <span class="f-why">Forma nincs. Csak megfelelőség van, vagy nem-megfelelőség. Az ellenőr nem relativizál.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Ezt így csinálja a többi képző is."</span>
+                    <span class="f-why">A „bezzeg mások is" hatósági megfelelője. Az ellenőr nem „a többieket" ellenőrzi.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Ez egy régi rendszer maradványa."</span>
+                    <span class="f-why">Beismerés. A rendszer vagy hatályos, vagy nem.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Most nincs itt az a kolléga, aki ezt jobban tudná."</span>
+                    <span class="f-why">„A rendszer személyfüggő." Ez az egyik legrosszabb üzenet, ami elhangozhat.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„De a képzés szakmailag nagyon jó."</span>
+                    <span class="f-why">Tragikusan gyakori és irreleváns. Fordítás: adminisztratív hibák vannak, de elterelem a figyelmet.</span>
+                </li>
+                <li>
+                    <span class="f-quote">„Ez így mindenkinek megfelelt eddig."</span>
+                    <span class="f-why">A „mindenki" nem létezik. Csak jogszabály van. És jegyzőkönyv.</span>
+                </li>
+            </ul>
+
+            <h3 id="helyes-mondatok">Helyes válaszok kategóriánként</h3>
+
+            <table class="wikitable">
+                <thead>
+                    <tr><th>Szituáció</th><th>Helyes mondat</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Kérdésre válasz</td><td class="td-ok">„A válasz igen. A részletek a dokumentációban szerepelnek."</td></tr>
+                    <tr><td>Kérdésre válasz</td><td class="td-ok">„A vonatkozó eljárást a minőségirányítási dokumentumban rögzítettük."</td></tr>
+                    <tr><td>Hangulat oldásakor</td><td class="td-ok">„Értem." / „Rendben." / „Jegyzetelem."</td></tr>
+                    <tr><td>Segítő szándékú megjegyzésre</td><td class="td-ok">„Értjük az észrevételt." / „Köszönjük, rögzítjük."</td></tr>
+                    <tr><td>Segítő szándékú megjegyzésre</td><td class="td-ok">„Megfontoljuk a jogszabályi keretek között."</td></tr>
+                </tbody>
+            </table>
+
+            <!-- HIBA 3 -->
+            <h2 id="hiba3">3. hiba: A játékszabályok elhanyagolása</h2>
+
+            <p>Sokan esnek abba a hibába, hogy egy ellenőrzést <b>szakmai vagy pedagógiai vitának</b> tekintenek. A felnőttképzési ellenőrzés mindenekelőtt <b>jogi eljárás.</b></p>
+
+            <p>Az ellenőrzés lényege nem a képzés szakmai minőségének szubjektív megítélése, hanem annak objektív vizsgálata, hogy a cég betartja-e a jogszabályi előírásokat. Ha egy képzési programban 30 kontaktóra szerepel, de a jelenléti ívek szerint csak 10 valósult meg — az ellenőrnek nem kell pedagógiai szakértőnek lennie. <b>A dokumentált valóság számít.</b></p>
+
+            <p>A jogszabályok ismerete nem arra való, hogy vitatkozzunk az ellenőrrel, hanem arra, hogy <b>magabiztosságot adjon.</b> Aki nem ismeri a szabályokat, kiszolgáltatottá válik.</p>
+
+            <table class="wikitable">
+                <thead>
+                    <tr><th>Alkalmazandó jogforrás</th><th>Mire vonatkozik</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Felnőttképzési törvény (Fktv.)</td><td>A teljes jogszabályi keret alapja</td></tr>
+                    <tr><td>Végrehajtási rendeletek</td><td>Kormányrendeletek és miniszteri rendeletek</td></tr>
+                    <tr><td>Minőségirányítási dokumentumok</td><td>A képző saját, vállalt kötelezettségei</td></tr>
+                </tbody>
+            </table>
+
+            <div class="ambox note">
+                <div class="ambox-icon">💡</div>
+                <div class="ambox-text">A nyomtatott, spirálozott jogszabálygyűjtemény vizuálisan is profizmust sugároz — jelzi, hogy a képző rendszerekben gondolkodik, nem improvizál.</div>
+            </div>
+
+            <!-- ÖSSZEFOGLALÁS -->
+            <h2 id="osszefoglalas">Összefoglalás</h2>
+
+            <table class="wikitable">
+                <thead>
+                    <tr><th>Hiba</th><th>Kockázat</th><th>Helyes magatartás</th><th class="td-bad">Tiltott példamondat</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>1. Túl sok beszéd</b></td>
+                        <td>Alapanyagot ad az ellenőrnek, tudáshiányt leplez le</td>
+                        <td>Rövid tényszerű válaszok, csend elviselése, dokumentációra hivatkozás</td>
+                        <td class="td-bad">„A gyakorlatban ez kicsit máshogy van."</td>
+                    </tr>
+                    <tr>
+                        <td><b>2. Barátként kezelés</b></td>
+                        <td>Gyanút kelt, védekezés lebomlik</td>
+                        <td>Udvarias, professzionális távolságtartás minden helyzetben</td>
+                        <td class="td-bad">„Szerintem ez nem akkora gond."</td>
+                    </tr>
+                    <tr>
+                        <td><b>3. Jogszabályismeret hiánya</b></td>
+                        <td>Kiszolgáltatottság, nem lehet védekezni</td>
+                        <td>Vonatkozó jogszabályok kinyomtatva, rendszerezve, kéznél</td>
+                        <td class="td-bad">„Most nincs itt az a kolléga…"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <blockquote>„A különbség a kiszolgáltatottság és a kontroll között nem az, hogy van-e hiba. Hanem az, hogy <b>ki uralja a helyzetet.</b>"</blockquote>
+
+            <!-- FIGYELMEZTETÉS -->
+            <h2 id="figyelmezetes">Figyelmeztetés</h2>
+
+            <div class="ambox warn">
+                <div class="ambox-icon">⚠</div>
+                <div class="ambox-text">Ez az útmutató <b>nem jogi tanács, nem képviselet, nem hatósági állásfoglalás.</b> Olyan tapasztalati mintákat mutat be, amelyek a dokumentáció, a reakciók és a viselkedés szintjén dőlnek el. Oktatás = vannak szürke zónák. Jogszabályok = vannak szürke zónák. Emberi pszichológia = vannak szürke zónák.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <div>© 2026 Fktv| <a href="aszf.html">ÁSZF</a> | <a href="adatvedelem.html">Adatkezelés</a> | <a href="jogi.html">Impresszum</a></div>
+        <div><a href="megrendeles.html">Megrendelés →</a></div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1883,9 +1883,9 @@ section.output-bg::after {
 
 /* Asymmetry — slight rotations on tags, stickers, ribbons */
 .hero.hero-v3 .hero-tag { transform: rotate(-7.6deg); transform-origin: left center; }
-.day .stickerd { transform: rotate(-2.4deg); transform-origin: top right; }
-.days .day:nth-child(2) .stickerd { transform: rotate(1.8deg); }
-.days .day:nth-child(3) .stickerd { transform: rotate(-1.3deg); }
+.day .stickerd { transform: rotate(0deg); transform-origin: top right; }
+.days .day:nth-child(2) .stickerd { transform: rotate(0deg); }
+.days .day:nth-child(3) .stickerd { transform: rotate(0deg); }
 
 /* Stamp gets a subtle wobble */
 .stamp { transform: rotate(-11deg); }
@@ -1899,9 +1899,9 @@ section.output-bg::after {
     0 14px 28px -10px rgba(15, 10, 5, 0.30),
     0 3px 6px -2px rgba(15, 10, 5, 0.12);
 }
-.beige > .wrap > div > figure:nth-child(1) { transform: rotate(-3.4deg); }
-.beige > .wrap > div > figure:nth-child(2) { transform: rotate(2.8deg); }
-.beige > .wrap > div > figure:nth-child(3) { transform: rotate(-2.4deg); }
+.beige > .wrap > div > figure:nth-child(1) { transform: rotate(-5.4deg); }
+.beige > .wrap > div > figure:nth-child(2) { transform: rotate(6.8deg); }
+.beige > .wrap > div > figure:nth-child(3) { transform: rotate(-7.4deg); }
 .beige > .wrap > div > figure:hover {
   transform: rotate(0deg) translateY(-6px);
   box-shadow:
@@ -1938,7 +1938,7 @@ section.output-bg::after {
   color: var(--ink);
   margin-bottom: 4px;
   display: inline-block;
-  transform: rotate(-1.6deg);
+  transform: rotate(-5.6deg);
   transform-origin: left center;
 }
 
